@@ -16,7 +16,8 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const emailEndpoint = 'http://localhost:3001/send-email';
+        const dev = process.env.NODE_ENV !== 'production';
+        const emailEndpoint = dev ? 'http://localhost:3000/api/sendEmail' : 'https://dahliajoportfolio.vercel.app/api/sendEmail';
         try {
             const response = await fetch(emailEndpoint, {
                 method: 'POST',
