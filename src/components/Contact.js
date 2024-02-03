@@ -28,7 +28,7 @@ const Contact = () => {
             });
             const data = await response.json();
             console.log(formData);
-            alert('Form submitted successfully!');
+            alert('Message sent to Dahlia!');
 
         } catch (error) {
             console.error("Error submitting form:", error);
